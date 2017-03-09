@@ -1,0 +1,37 @@
+# Camel Game
+import random
+
+print('Welcome to the Camel Game')
+print('You have stolen a camel to make your way across the great Mobi Desert')
+print('the natives want their camel back and area chasing you down! Survive your desert trek and outrun the natives')
+
+done = False
+thirst = 100
+stamina = 100
+native_distance = -20
+distance = 0
+canteen = 3
+full_speed = random.randrange(15,25)
+moderate_speed = random.randrange(5,15)
+native_speed = random.randrange(5,15)
+
+print()
+while not done:
+    print('You are presented with five options: \n\nA) Drink from your canteen \nB) Ahead Moderate Speed \nAhead Full Speed \nD) Stop and Rest \nE) Status Check \nQ) Quit')
+    print()
+    decision = input('Your Choice: ')
+    if decision == 'A' or decision == 'a':
+        if thirst == 100:
+            print('Your Canteen is Full')
+        else:
+            thirst = thirst + 25
+        print('Current Thirst: ',thirst)
+    if decision == 'b' or decision == 'B':
+        distance = distance + moderate_speed
+        print('Your distance traveled is: ',distance)
+    if decision == 'c' or decision == 'C':
+        print('Current Distance',distance)
+        distance = distance + full_speed
+        print('New Distance: ',distance)
+        
+        
